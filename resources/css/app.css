@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "../../node_modules/preline/variants.css";
+@import "../../node_modules/preline/css/themes/theme.css";
+
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../../node_modules/preline/dist/*.js";
+
+/* Optional Preline UI Datepicker Plugin */
+/* @import "../../node_modules/preline/datepicker-styles-utility.css"; */
+
+/* Plugins */
+/* @plugin "@tailwindcss/forms"; */
+
+/* Preline Themes */
+
+/* Optional Preline UI Datatable Plugin: DataTables.net renders its own
+  search/length/paging controls alongside Preline's own; hide the native
+  ones since they can't be disabled through DataTables options alone. */
+/*
+.dt-layout-row:has(.dt-search),
+.dt-layout-row:has(.dt-length),
+.dt-layout-row:has(.dt-paging) {
+  display: none !important;
+}
+*/
+@theme {
+    /* Changes dark mode trigger from the system to a class you won't use */
+    --dark-mode: class(disabled-dark-mode);
+}
+
+@layer utilities {
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    -moz-appearance: textfield; /* Firefox */
+  }
+}
